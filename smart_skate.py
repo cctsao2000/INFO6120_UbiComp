@@ -21,7 +21,6 @@ advertisement = ProvideServicesAdvertisement(uart)
 start_sec = 0
 end_sec = 0
 started = False
-speed_list = []
 distance = 0
 
 def cal_acceleration(origin_point, current_point): # ignore y axis, which refers to jumping action
@@ -30,27 +29,28 @@ def cal_acceleration(origin_point, current_point): # ignore y axis, which refers
 def cal_distance(origin_point, current_point):
     return (abs(current_point[0] - origin_point[0]) + abs(current_point[1] - origin_point[1])) ** 0.5
 
-def overspeed_alert(speed, speed_limit=1.5):
+def overspeed_alert(speed, speed_limit=0.01): # I made it easier to trigger for demo purpose
     if speed > speed_limit:
         for i in range(10):
             cp.pixels[i] = (10, 0, 0)
         cp.play_file("assets/overspeed.wav")
         for i in range(10):
             cp.pixels[i] = (0, 0, 0)
+    print(speed)
 
 def obstacle_detecter(distance):
-    if distance < 100:
+    if distance < 100: # I made it harder to trigger for demo purpose (Too many obstacles indoor)
         cp.play_file("assets/obstacle.wav")
 
 def generate_report():
-    current_time = time.localtime(761275844+time.time()) # rebooting will cause the time to be inaccurate
-    with open(f'{current_time[0]}_{current_time[1]}_{current_time[2]}_{current_time[3]}{current_time[4]}.txt', 'w') as f:
+    current_time = time.localtime(761795844+time.time()) # rebooting will cause the time to be inaccurate
+    with open(f'{current_time[0]}_{current_time[1]}_{current_time[2]}_{current_time[3]:02d}{current_time[4]:02d}.txt', 'w') as f:
         f.write(f'Date: {current_time[0]}/{current_time[1]}/{current_time[2]}\n')
         f.write(f'Average Speed: {(distance_location) / (end_sec-start_sec) * 3.6:.2f} kph\n')
         f.write(f'Skating Distance: {distance_location:.2f} meters\n')
         f.write(f'Skating Time: {(end_sec-start_sec) // 60:02d}:{(end_sec-start_sec) % 60:02d}\n')
     print(current_time)
-    print(f'{(distance_location) / (end_sec-start_sec) * 3.6:.2f}')
+    print(f'Speed: {(distance_location) / (end_sec-start_sec) * 3.6:.2f}')
     print(f'Skating Distance: {distance_location:.2f} meters')
     print(f'Skating Time: {(end_sec-start_sec) // 60:02d}:{(end_sec-start_sec) % 60:02d}')
 
@@ -58,12 +58,11 @@ def generate_report():
 def start_record():
     global start_sec
     global started
-    global speed_list
     global distance_location
     distance_location = 0
-    speed_list = []
     start_sec = time.time()
     started = True
+    cp.play_file("assets/rec_start.wav")
     print('start recording')
 
 def end_record():
@@ -71,6 +70,7 @@ def end_record():
     global started
     end_sec = time.time()
     started = False
+    cp.play_file("assets/rec_end.wav")
     print('end recording')
 
 while True:
@@ -98,7 +98,6 @@ while True:
                         current_location = (float(f'{packet.latitude:6f}'[2:]), float(f'{packet.longitude:6f}'[2:]))
                         distance_location += cal_distance(initial_location, current_location)
                         current_location = initial_location
-                    speed_list.append(round(speed, 2))
         except ValueError:
             continue
 
@@ -108,5 +107,9 @@ while True:
         x2, y2, z2 = cp.acceleration
         speed = (cal_acceleration((x, y, z), (x2, y2, z2)) * (unit_time ** 2)) / 2
         overspeed_alert(speed)
-        obstacle_detecter(sonar.distance)
-
+        try:
+            dis = sonar.distance
+            obstacle_detecter(dis)
+        except RuntimeError:
+            continue
+        print(sonar.distance)
