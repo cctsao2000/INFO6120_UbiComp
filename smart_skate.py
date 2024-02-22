@@ -108,7 +108,7 @@ while True:
                         except NameError:
                             initial_location = (float(f'{packet.latitude:6f}'[2:]), float(f'{packet.longitude:6f}'[2:]))
                         current_location = (float(f'{packet.latitude:6f}'[2:]), float(f'{packet.longitude:6f}'[2:]))
-                        distance_location += cal_distance(initial_location, current_location)
+                        distance_location += cal_distance(initial_location, current_location) * 100
                         current_location = initial_location
         except ValueError:
             continue
