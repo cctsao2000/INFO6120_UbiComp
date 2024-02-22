@@ -41,5 +41,5 @@ YouTube Link: https://youtu.be/fRBaFWnDZAE
 ### Discussion
 As a prototype, there are certain weaknesses and limitations in the product that could be enhanced in future versions. Implementing a wireless audio system would not only ensure better sound quality but also eliminate the risk of users tripping over cables. Enhancements to the case design, perhaps utilizing materials like Acrylic, would offer clearer visibility for the device's lights while providing robust protection for the hardware. Introducing a user interface that incorporates user input would enable customization of speed limits and object detection sensitivity. Moreover, incorporating a dynamic obstacle detection system could better accommodate skaters of varying speeds, as their required reaction times may differ.
 ### Reference
-[1] Conley, D. (2017). CPU temperature logging with CircuitPython. Adafruit Learning System. https://learn.adafruit.com/cpu-temperature-logging-with-circuit-python/writing-to-the-filesystem
+[1] Conley, D. (2017). CPU temperature logging with CircuitPython. Adafruit Learning System. https://learn.adafruit.com/cpu-temperature-logging-with-circuit-python/writing-to-the-filesystem  
 [2] Walters, K. (2018). Distance measurement with ultrasound. Adafruit Learning System. https://learn.adafruit.com/distance-measurement-ultrasound-hcsr04/overview
