@@ -1,6 +1,6 @@
 # SmartSkate 
 *Assignment 1: Wearable Systems, Ubiquitous Computing SP24*  
-Amber Tsao (ct649)  
+Amber Tsao
 
 <img src="img/smartskate.jpg" alt="smartskate" width="300"/>
 
