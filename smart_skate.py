@@ -40,7 +40,11 @@ def overspeed_alert(speed, speed_limit=0.01): # I made it easier to trigger for 
 
 def obstacle_detecter(distance):
     if distance < 100: # I made it harder to trigger for demo purpose (Too many obstacles indoor)
+        for i in range(10):
+            cp.pixels[i] = (0, 0, 10)
         cp.play_file("assets/obstacle.wav")
+        for i in range(10):
+            cp.pixels[i] = (0, 0, 0)
 
 def generate_report():
     current_time = time.localtime(761795844+time.time()) # rebooting will cause the time to be inaccurate
@@ -62,7 +66,11 @@ def start_record():
     distance_location = 0
     start_sec = time.time()
     started = True
+    for i in range(10):
+        cp.pixels[i] = (10, 10, 0)
     cp.play_file("assets/rec_start.wav")
+    for i in range(10):
+        cp.pixels[i] = (0, 0, 0)
     print('start recording')
 
 def end_record():
@@ -70,7 +78,11 @@ def end_record():
     global started
     end_sec = time.time()
     started = False
+    for i in range(10):
+        cp.pixels[i] = (10, 0, 10)
     cp.play_file("assets/rec_end.wav")
+    for i in range(10):
+        cp.pixels[i] = (0, 0, 0)
     print('end recording')
 
 while True:
