@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+  <title>Glens Web Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/glens.css">
+</head>
+
+<body>
+  <!-- <script src="https://d3js.org/d3.v3.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.8.1/localforage.js"></script> -->
+  <script src="./webgazer.js"></script>
+  <script src="js/glens.js"></script>
+  <!-- <script src="js/collision.js"></script> -->
+  <div class="columns">
+    <div class="column is-one-quarter" style="padding: 5%; background-color: #D5E3EC">
+      <h2 style="font-size: 24px">Reading Speed</h2>
+      <br>
+      <div class="columns"><div class="column">1</div><div class="column"><span class="dot" id="d1"></span></div></div>
+      <div class="columns"><div class="column">2</div><div class="column"><span class="dot" id="d2"></span></div></div>
+      <div class="columns"><div class="column">3</div><div class="column"><span class="dot" id="d3"></span></div></div>
+      <div class="columns"><div class="column">4</div><div class="column"><span class="dot" id="d4"></span></div></div>
+      <div class="columns"><div class="column">5</div><div class="column"><span class="dot" id="d5"></span></div></div>
+      <div class="columns"><div class="column">6</div><div class="column"><span class="dot" id="d6"></span></div></div>
+      <div class="columns"><div class="column">7</div><div class="column"><span class="dot" id="d7"></span></div></div>
+      <div class="columns"><div class="column">8</div><div class="column"><span class="dot" id="d8"></span></div></div>
+      <div class="columns"><div class="column">9</div><div class="column"><span class="dot" id="d9"></span></div></div>
+    </div>
+    <div class="column" style="padding: 5%;">
+      <h2>As the Snoopy Omega Lands, Cartoon Luxury Goes Boom</h2>
+      <br>
+      <h4>
+        Snoopy, Popeye, and Miss Piggy are no longer relegated to bargain-basement merch, as Louis Vuitton,
+        Balenciaga, Fendi, and other high-end brands tap into comic connections.
+      </h4>
+      <!-- <img src="./img/26.03.24-Cartoon-Watches-Online-00-Header.webp" style="width:60%; margin: 5%;"> -->
+      <br>
+      <div class="columns">
+        <div class="column is-1">1</div>
+        <div class="column">
+          <p id="p1">
+            Should you fancy a wristwatch with Snoopy on it, you’re hardly short of options. Timex has an entire collection
+            dedicated to the Peanuts gang, Seiko recently issued a breezy duo of Snoopy-adorned tickers, and Bamford London,
+            a UK luxury watch brand, has a £1,700 ($2,240) GMT made as a collab with the fashion website Hypebeast,
+            featuring the famous pooch styled in streetwear. Or you could just plump for the cute Snoopy watch face Apple
+            added to its WatchOS last summer.
+          </p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-1">2</div>
+        <div class="column">
+          <p id="p2">
+            But for Snoopy-powered wrist gear with added red-hot hype credentials, you could try your luck today at selected
+            Swatch stores around the world, where the new edition of the MoonSwatch, the brand’s cut-price interpretation of
+            Omega’s venerated, astronaut-worn Speedmaster Moonwatch Professional, is dropping.
+          </p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-1">3</div>
+        <div class="column">
+          <p id="p3">
+            It’s exactly two years since the original MoonSwatch collection unleashed a storm of online hysteria, frenzied
+            crowds at stores and aftermarket profiteering—it was, to put it mildly, something of a hullabaloo.
+          </p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-1">4</div>
+        <div class="column">
+          <p id="p4">
+            The new version, called the Mission to Moonphase, is looking to restoke the buzz with a design in all-white
+            bioceramic (a proprietary compound of bioplastic and ceramic), featuring a lunar display at 2 o’clock in which
+            Snoopy reclines on a crescent moon, his sidekick Woodstock on his lap. In low light the moon glows amid a starry
+            sky, and an otherwise hidden legend shines out: “I can’t sleep without a night light,” a reference to a 1962
+            Peanuts strip in which the dog falls asleep to the light of a full moon.
+          </p>
+        </div>
+      </div>
+      <!-- <img src="./img/26.03.24-Cartoon-Watches-Online-1.webp" style="width:60%; margin: 5%;"> -->
+      <h4>
+        Kitsch Character Comeback
+      </h4>
+      <br>
+      <div class="columns">
+        <div class="column is-1">5</div>
+        <div class="column">
+          <p id="p5">
+            On the one hand, this is an if-you-know-you-know hat-tip to Omega lore: The brand, official watchmaker for NASA
+            astronauts, was conferred the agency’s Silver Snoopy Award for achievements in mission success in 1970, the
+            character having been adopted as a safety mascot the previous decade. Omega’s three modern Speedmaster editions
+            featuring Snoopy, created in 2003, 2015, and 2020, are among its most sought-after and collectible watches.
+          </p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-1">6</div>
+        <div class="column">
+          <p id="p6">
+            However, it’s also the latest confirmation of the fact that kitsch characters—cartoons, gaming creations,
+            superheroes, anime, etc.—have become huge business in the world of apparel, gear, and even luxury.
+          </p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-1">7</div>
+        <div class="column">
+          <p id="p7">
+            The licensing operations behind IP from Popeye to Miss Piggy are no longer dealing simply in bargain-basement
+            merch: They are leveraging designer products for a rising generation of high-end buyers, whose radar for all
+            things nostalgic, ironic, and drenched in the sugar coating of pop culture—as opposed to the remote mystique of
+            olde worlde luxury—is finely attuned.
+          </p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-1">8</div>
+        <div class="column">
+          <p id="p8">
+            In recent years, for instance, Louis Vuitton has done Mickey Mouse with its Gerald Genta brand, Balenciaga has teamed up
+            with Fortnite, and TAG Heuer has put out limited edition Super Mario watches (including a tourbillon in which a tiny
+            Mario, adorning the tourbillon’s structure, is chased in a circle by fellow game figures Bullet Bill and the Blue
+            Shell).
+          </p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-1">9</div>
+        <div class="column">
+          <p id="p9">
+            Current examples include Italy’s high-end fashion mainstay Fendi, which in January launched a tie-up with Pokémon; the
+            bags being made by the Spanish luxury house Loewe, adorned with characters from Studio Ghibli anime; and the
+            green-dialed watch from Oris, the Swiss firm, in which Kermit pops into the date window once a month.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
